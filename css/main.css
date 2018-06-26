@@ -1,0 +1,111 @@
+body {
+  font-family: 'Exo 2', sans-serif;
+  color:white;
+  text-align: center;
+}
+
+header {
+  display: block;
+  background: linear-gradient(to right, forestgreen, black);
+  padding: 10px;
+}
+
+h1 {
+  font-size: 55px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 20px;
+}
+
+main {
+  background: url("../img/background2.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+
+.space {
+  margin-bottom: 30px;
+  height: 10px;
+}
+.cont {
+  margin: 0 auto;
+}
+
+#board {
+  width: 80%;
+  height: 750px;
+  background: rgba(142, 163, 130, 0.84);
+  padding: 75px;
+  margin: 0 auto;
+  border-radius: 84px;
+  box-shadow: inset 0px 0px 20px -6px rgba(97,89,97,1);
+}
+
+.card {
+  width:150px;
+  height: 150px;
+  float: left;
+  border: 1px solid gray;
+  margin-right: 15px;
+}
+
+.card .back{
+  background-color: #456783;
+	width:130px;
+  height:140px;
+  margin-top: 5px;  
+  float:left; 
+  align-self: center; 
+  margin: 5px auto 0;
+}
+
+.card .front.blocked,
+.card .back.blocked {
+  pointer-events: none;
+}
+
+.contenedor {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.contenedor ul{
+  list-style-type: none;
+
+}
+
+.contenedor ul li{
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.btn {
+  width: 150px;
+  background: white;
+  color:black;
+}
+
+.btn:active {
+  top: 5px;
+  box-shadow: none;
+}
+
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.btn {
+  margin-top: 20px;
+  background: white;
+  color: black;
+
+}
