@@ -5,8 +5,6 @@ $(document).ready(function() {
 
   $(".2nd").hide();
 
-
-
   $(".btn-status").click(function (){
     $(".btn-status-second").show();
     $(".btn-activity, .btn-hair-style, .btn-hair-color, .btn-facial-hair").hide();
@@ -97,7 +95,9 @@ $(document).ready(function() {
   $(".btn-facial-hair").click(function (){
     $(".btn-facial-hair-second").show();
     $(".btn-yes").on("click", function (){
+      if(maingame.checkIfFeature("facialHair", "yes")){
       $(".no-facial, .btn-yes, .btn-no").remove();
+    } else alert("try again");
     })
     $(".btn-no").on("click", function (){
       $(".yes-facial, .btn-yes, .btn-no").remove();
@@ -110,11 +110,11 @@ $(document).ready(function() {
     $("#hints").text(maingame.hints);
   });
 
-  $(".back").click(function(){
-  maingame.pickedCard = $(this);
-  if (maingame.checkIfPair()) {
-    $("#guessed").text(maingame.guessed);
-    maingame.draw();
-  }
-})
+  $(".back").live('click', function() {
+    maingame.pickedCard = $(this);
+    if (maingame.checkIfPair()) {
+      $("#guessed").text(maingame.guessed);
+      maingame.draw();
+    }
+  });
   });

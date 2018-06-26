@@ -27,18 +27,28 @@ mainGame.prototype.checkIfFeature = function (field, value) {
 mainGame.prototype.checkIfPair = function (){
   console.log(this.pickedCard[0].offsetParent.attributes[1].nodeValue == "card_" + this.randomCard.name);
   if(this.pickedCard[0].offsetParent.attributes[1].nodeValue == "card_" + this.randomCard.name) {
-    // this.guessed++;
-    if (this.hints < this.maxHints) {
-      //this.audiogol.play();
-      this.guessed++;
-      return true;
+    this.guessed++;
+    return true;
+    //this.audiogol.play();
   } else {
     //this.audiosilbido.play();
   }
   //this.audiouy.play();
   return false;
+  };
+
+
+mainGame.prototype.checkIfWin = function (){
+  if (this.guessed == 24){
+    if (this.hints < this.maxHints){
+      alert("Has ganado!");
+    } else {
+
+    }
+  } else {
+
   }
-};
+}
 
 mainGame.prototype.draw = function(){
   var randomcard = this.randomPick(cards);
