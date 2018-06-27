@@ -38,14 +38,14 @@ main {
   height: 690px;
   margin-left: 20px;
   background: rgba(183, 225, 239, 0.50);
+  border: 1px;
+  border-radius: 50px;
 }
 
 #board {
   width: 80%;
   padding: 20px;
   margin-left: 30px;
-  /* border-radius: 70px;
-  box-shadow: inset 0px 0px 20px -6px blue; */
 }
 
 .card {
@@ -57,41 +57,35 @@ main {
   margin-top: 10px;
 }
 
-.random .card{
-  width:200px;
-  height: 250px;
-  margin-top: -600px;
-  margin-left: 1120px;
+.randomcard{
+  width:150px;
+  height: 150px;
+  margin: 20px 0 40px 1120px;
   background: white url("../img/question.png") no-repeat;
   background-size: 100% 95%;
 }
 
-.card .back{
-  background-color: gray;
-	width:130px;
-  height:140px;
-  margin-top: 5px;  
-  float:left; 
-  align-self: center; 
-  margin: 0px auto 0;
+.randomcard .imagen{
+  height: 250px;
+  margin: 5px auto;
 }
 
-/* .card .front.blocked,
-.card .back.blocked {
-  pointer-events: none; 
-}*/
+
+.card .imagen{
+	width:130px;
+  height:140px;
+  margin: 5px auto; 
+  float:left; 
+}
 
 .contenedor {
   height: 150px;
   display: flex;
   justify-content: center;
   width: 100%;
-}
-
-.contenedor ul{
   list-style-type: none;
-
 }
+
 
 .contenedor ul li{
   display: inline-block;
@@ -103,6 +97,12 @@ main {
   background: white;
   color:black;
   margin-top: 20px;
+}
+
+.start {
+  width: 200px;
+  background: white;
+  color:black;
 }
 
 .btn:active {
