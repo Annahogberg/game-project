@@ -1,4 +1,4 @@
-var mainGame2 = function (cards) {
+var mainGame = function (cards) {
   this.cards = cards;
   this.guessed = 0;
   this.pickedCard;
@@ -13,21 +13,21 @@ var mainGame2 = function (cards) {
   // this.audiouy = new Audio('uy');
  };
 
-mainGame2.prototype.shuffleCard = function (cardsArr) {
+mainGame.prototype.shuffleCard = function (cardsArr) {
   this.cards =  _.shuffle(cardsArr);
   return _.shuffle(cardsArr);
 };
 
-mainGame2.prototype.randomPick = function (items) {  
+mainGame.prototype.randomPick = function (items) {  
   this.randomCard = items[Math.floor(Math.random()*items.length)];
   return this.randomCard;
 }
 
-mainGame2.prototype.checkIfFeature = function (field, value) {
+mainGame.prototype.checkIfFeature = function (field, value) {
   return this.randomCard[field] == value
 };
 
-mainGame2.prototype.changeTurn = function(){
+mainGame.prototype.checkWhatPlayer = function(){
   if (this.activePlayer == this.player1){
     this.activePlayer = this.player2;
   } else {
@@ -35,7 +35,7 @@ mainGame2.prototype.changeTurn = function(){
   }
 }
 
-mainGame2.prototype.checkIfPair = function (){
+mainGame.prototype.checkIfPair = function (){
   console.log(this.pickedCard[0].offsetParent.attributes[1].nodeValue == "card_" + this.randomCard.name);
   if(this.pickedCard[0].offsetParent.attributes[1].nodeValue == "card_" + this.randomCard.name) {
     this.guessed++;
@@ -54,7 +54,7 @@ mainGame2.prototype.checkIfPair = function (){
   };
 
 
-mainGame2.prototype.checkIfWin = function (){
+mainGame.prototype.checkIfWin = function (){
   if (this.guessed == 24){
     if (this.hints < this.maxHints){
       alert("Has ganado!");
@@ -66,7 +66,7 @@ mainGame2.prototype.checkIfWin = function (){
   }
 }
 
-mainGame2.prototype.draw = function(){
+mainGame.prototype.draw = function(){
   var randomcard = this.randomPick(cards);
   console.log(randomcard);
   var html = "";

@@ -4,7 +4,7 @@ var mainGame = function (cards) {
   this.pickedCard;
   this.randomCard;
   this.hints = 0;
-  this.maxHints = 5;
+  this.maxHints = 12;
   // this.audiosilbido = new Audio('silbido');
   // this.audiogol = new Audio('gol');
   // this.audiouy = new Audio('uy');
@@ -27,9 +27,9 @@ mainGame.prototype.checkIfFeature = function (field, value) {
 mainGame.prototype.checkIfPair = function (){
   console.log(this.pickedCard[0].offsetParent.attributes[1].nodeValue == "card_" + this.randomCard.name);
   if(this.pickedCard[0].offsetParent.attributes[1].nodeValue == "card_" + this.randomCard.name) {
-    this.guessed++;
-    console.log(this.pickedCard[0])
     $(".randomcard").html(this.pickedCard[0]);
+    this.guessed++;
+    alert("Correct!! Keep going!")
     return true;
     //this.audiogol.play();
   } else {
@@ -39,18 +39,25 @@ mainGame.prototype.checkIfPair = function (){
   return false;
   };
 
-
-mainGame.prototype.checkIfWin = function (){
-  if (this.guessed == 24){
-    if (this.hints < this.maxHints){
-      alert("Has ganado!");
-    } else {
-
-    }
-  } else {
-
+mainGame.prototype.restart = function (){
+  if (this.guessed == 3) {
+    this.guessed = 0;
+    this.hints = 0;
   }
 }
+
+mainGame.prototype.checkIfWin = function (){
+  if (this.guessed == 3){
+    if (this.hints < this.maxHints){
+      alert("Has ganado!");
+      this.restart();
+    } else {
+      alert("You've used too many hints!")
+    }
+  } else {
+  }
+}
+
 
 mainGame.prototype.draw = function(){
   var randomcard = this.randomPick(cards);

@@ -17,7 +17,7 @@ $(document).ready(function() {
         if (maingame.checkIfFeature("status", "coach")) {
           $(".player, .btn-player, .btn-coach").hide();
           $(".btn-activity, .btn-hair-style, .btn-hair-color, .btn-facial-hair").show();
-        } else alert("try again");
+        } else alert("try again");    //audio
       })
       $(".btn-player").on("click", function (){
         if (maingame.checkIfFeature("status", "player")) {  
@@ -120,6 +120,7 @@ $(document).ready(function() {
       if (maingame.checkIfPair()) {
         $("#guessed1").text(maingame.guessed);
         maingame.draw();
+        maingame.checkIfWin();
       }
   });
   });
