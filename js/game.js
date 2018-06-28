@@ -96,8 +96,8 @@ mainGame.prototype.checkIfWin = function() {
     }else if (scorePlayerOne == scorePlayerTwo) {
       alert("You're equally good! Congrats!!!");
     }
+    this.audiocampeones.play();
   } 
-  this.audiocampeones.play();
 };
 
 mainGame.prototype.draw = function() {
