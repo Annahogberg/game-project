@@ -89,6 +89,7 @@ mainGame.prototype.checkIfWin = function() {
   var scorePlayerTwo = playerTwoHints + playerTwoWrongs * 1.5
 
   if (this.players.player1.guessed == 2 && this.players.player2.guessed == 2) {
+    this.audiocampeones.play();
     if (scorePlayerOne < scorePlayerTwo) {
       alert("Player 2 lost, the score of Player 1 was better");
     } else if (scorePlayerOne > scorePlayerTwo ){
@@ -96,7 +97,6 @@ mainGame.prototype.checkIfWin = function() {
     }else if (scorePlayerOne == scorePlayerTwo) {
       alert("You're equally good! Congrats!!!");
     }
-    this.audiocampeones.play();
   } 
 };
 
