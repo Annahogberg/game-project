@@ -163,7 +163,7 @@ var cards = [
     name: "Torres",
     img: "Torres.png",
     status: "player",
-    actividad: "retired",
+    actividad: "active",
     hairStyle: "medium",
     hairColor: "red",
     facialHair: "no"
