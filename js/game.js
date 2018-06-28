@@ -42,9 +42,8 @@ var mainGame = function() {
       wrongs: 0,
     }
   };
-  // this.audiosilbido = new Audio('silbido');
-  // this.audiogol = new Audio('gol');
-  // this.audiouy = new Audio('uy');
+  this.audiosilbido = new Audio('./sound/silbato.mp3');
+  this.audiogol = new Audio('./sound/21-24.mp3');
 };
 
 mainGame.prototype.shuffleCard = function() {
@@ -62,15 +61,14 @@ mainGame.prototype.checkIfFeature = function(field, value) {
 
 mainGame.prototype.checkIfPair = function(pickedCard) {
   if (pickedCard == "card_" + this.randomCard.name) {
+    this.audiogol.play();
     alert("Correct!! Keep going!");
     return true;
-    //this.audiogol.play();
   } else {
     this.players[this.currentPlayer].wrongs++;
     $("#" + this.currentPlayer + " .wrongs").text(this.players[this.currentPlayer].wrongs);
-    //this.audiosilbido.play();
+    this.audiosilbido.play();
   }
-  //this.audiouy.play();
   return false;
 };
 
@@ -80,16 +78,24 @@ mainGame.prototype.restart = function() {
   };
 
 mainGame.prototype.checkIfWin = function() {
-  console.log(this.players.player1.guessed,this.players.player2.guessed)
-  if (this.players.player1.guessed== 2 && this.players.player2.guessed == 2) {
-    if (this.players.player1.hints < this.players.player2.hints && this.players.player1.wrongs < this.players.player2.wrongs) {
-      alert("You've won by far " + this.currentPlayer + "!");
-    } else if (this.players.player1.hints > this.players.player2.hints || this.players.player1.wrongs > this.players.player2.wrongs){
-      alert("You've reached the guesses, but the other player has better score! " + this.currentPlayer + ", you've lost!");
-    } else if (this.players.player1.hints == this.players.player2.hints || this.players.player1.wrongs == this.players.player2.wrongs){
+  var playerOneHints = this.players.player1.hints;
+  var playerTwoHints = this.players.player2.hints;
+  var playerOneWrongs = this.players.player1.wrongs;
+  var playerTwoWrongs = this.players.player2.wrongs;
+
+  var scorePlayerOne = playerOneHints + playerOneWrongs
+  var scorePlayerTwo = playerTwoHints + playerTwoWrongs
+
+  if (this.players.player1.guessed == 2 && this.players.player2.guessed == 2) {
+    if (scorePlayerOne < scorePlayerTwo) {
+      alert("Player 2 lost, the score of Player 1 was better");
+    } else if (scorePlayerOne > scorePlayerTwo ){
+      alert("Player 1 lost, congrats Player 2!")
+    }else if (scorePlayerOne == scorePlayerTwo) {
       alert("You're equally good! Congrats!!!");
     }
   } 
+
 };
 
 mainGame.prototype.draw = function() {
@@ -98,14 +104,8 @@ mainGame.prototype.draw = function() {
   this.cards.forEach(function(pic, index) {
     html += '<div class= "card" id="card_' + pic.name + '">';
     html +=
-      '<div class="imagen ' +
-      pic.status +
-      " " +
-      pic.actividad +
-      " " +
-      pic.hairStyle +
-      " " +
-      pic.hairColor +
+      '<div class="imagen ' + pic.status + " " + pic.actividad + " " +
+      pic.hairStyle + " " + pic.hairColor +
       " " +
       pic.facialHair +
       '"';
