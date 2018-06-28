@@ -25,63 +25,62 @@
 
   <main>
     <div class="space"></div>
+    <div class="current_player">Current player: <span id="current_player"></span></div>
+    <button class="btn start active">Start</button>
 
-
-    <div class="blue">
-      <div id="board"></div>
-
-      <div class="random">
-        <div class="randomcard"></div>
-      </div>
-      <button class="btn start active">Start</button>
-    </div>
-
-    <div class="contenedor">
+    <div class="actions">
       <ul>
-        <div class="first">
-          <li><button class="btn btn-status active">Status</button></li>
-          <li><button class="btn btn-activity active">Activity</button></li>
-          <li><button class="btn btn-hair-style active">Hair Style</button></li>
-          <li><button class="btn btn-hair-color active">Hair Color</button></li>
-          <li><button class="btn btn-facial-hair active">Facial Hair</button></li>
-        </div>
+        <ul class="first">
+          <li><button class="btn btn-status active" data-type="status">Status</button></li>
+          <li><button class="btn btn-activity active" data-type="actividad">Activity</button></li>
+          <li><button class="btn btn-hair-style active" data-type="hairStyle">Hair Style</button></li>
+          <li><button class="btn btn-hair-color active" data-type="hairColor">Hair Color</button></li>
+          <li><button class="btn btn-facial-hair active" data-type="facialHair">Facial Hair</button></li>
+        </ul>
 
-        <div class="second">
-          <li><button class="2nd btn btn-status-second btn-coach active">Coach</button></li>
-          <li><button class="2nd btn btn-status-second btn-player active">Player</button></li>
-          <li><button class="2nd btn btn-activity-second btn-activo active">Active</button></li>
-          <li><button class="2nd btn btn-activity-second btn-retired active">Retired</button></li>
-          <li><button class="2nd btn btn-hair-style-second btn-bald active">Bald</button></li>
-          <li><button class="2nd btn btn-hair-style-second btn-short active">Short</button></li>
-          <li><button class="2nd btn btn-hair-style-second btn-medium-style active">Medium</button></li>
-          <li><button class="2nd btn btn-hair-color-second btn-brown active">Dark</button></li>
-          <li><button class="2nd btn btn-hair-color-second btn-blond active">Blond</button></li>
-          <li><button class="2nd btn btn-hair-color-second btn-red active">Red</button></li>
-          <li><button class="2nd btn btn-hair-color-second btn-gray active">Gray</button></li>
-          <li><button class="2nd btn btn-facial-hair-second btn-yes active">Yes</button></li>
-          <li><button class="2nd btn btn-facial-hair-second btn-no active">No</button></li>
-        </div>
+        <ul class="second">
+        </ul>
+
+        <div id="status_message"></div>
       </ul>
     </div>
-  </main>
+
+  <div class="blue">
+    <div id="board"></div>
+    <div class="random">
+      <div class="randomcard"></div>
+    </div>
+  </div>
+ </main>
 
   <footer>
-    <div class="container">
-      <div class="row">
-        <div id="Player1" class="col">
-          <h2>Player 1 - Score</h2>
-          <p>Hints: <span id="hints1">0</span></p>
-          <p>Guessed: <span id="guessed1">0</span></p>
-        </div>
-        <!-- <div id="Player2" class="col">
-          <h2>Player 2 - Score</h2>
-          <p>Hints: <span id="hints2">0</span></p>
-          <p>Guessed: <span id="guessed2">0</span></p>
-        </div> -->
+   <div class="container"></div>
+   <div class="row">
+      <div id="player1" class="col">
+        <h2>Player 1 - Score</h2>
+        <p>Hints:
+          <span class="hints">0</span>
+        </p>
+        <p>Guessed:
+          <span class="guessed">0</span>
+        </p>
+        <p>Wrong:
+          <span class="wrongs">0</span>
+        </p>
+      </div>
+      <div id="player2" class="col">
+        <h2>Player 2 - Score</h2>
+        <p>Hints:
+          <span class="hints">0</span>
+        </p>
+        <p>Guessed:
+          <span class="guessed">0</span>
+        </p>
+        <p>Wrong:
+          <span class="wrongs">0</span>
+        </p>
       </div>
     </div>
   </footer>
-
-
 </body>
 </html>

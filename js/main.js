@@ -1,126 +1,60 @@
 $(document).ready(function() {
-  var maingame = new mainGame(cards);
+  maingame = new mainGame(cards);
   maingame.shuffleCard(cards);
   maingame.draw();
 
-
+  $("#current_player").text(maingame.currentPlayer);
   $(".2nd, .first").hide();
 
   $(".start").click(function (){
     $(".first").show();
   })
 
-    $(".btn-status").click(function (){
-      $(".btn-status-second").show();
-      $(".btn-activity, .btn-hair-style, .btn-hair-color, .btn-facial-hair").hide();
-      $(".btn-coach").on("click", function (){
-        if (maingame.checkIfFeature("status", "coach")) {
-          $(".player, .btn-player, .btn-coach").hide();
-          $(".btn-activity, .btn-hair-style, .btn-hair-color, .btn-facial-hair").show();
-        } else alert("try again");    //audio
-      })
-      $(".btn-player").on("click", function (){
-        if (maingame.checkIfFeature("status", "player")) {  
-          $(".coach, .btn-player, .btn-coach").hide();
-          $(".btn-activity, .btn-hair-style, .btn-hair-color, .btn-facial-hair").show();
-        } else alert("try again");
-      })
-    })
 
-    $(".btn-activity").click(function (){
-      $(".btn-activity-second").show()
-      $(".btn-status, .btn-hair-style, .btn-hair-color, .btn-facial-hair").hide();
-      $(".btn-activo").on("click", function (){
-        if (maingame.checkIfFeature("actividad", "activo")){
-          $(".retired, .btn-retired, .btn-activo").hide();
-          $(".btn-status, .btn-hair-style, .btn-hair-color, .btn-facial-hair").show();
-        } else alert("try again");
-      })
-      $(".btn-retired").on("click", function (){
-        if (maingame.checkIfFeature("actividad", "retired")){
-          $(".activo, .btn-retired, .btn-activo").hide();
-          $(".btn-status, .btn-hair-style, .btn-hair-color, .btn-facial-hair").show();
-        } else alert("try again");
-      })
-    })
+  $("ul.first button").on('click', function () {
+    $(".randomcard").html('');
+    var type = $(this).data('type');
+    $("ul.second").html('');
 
-    $(".btn-hair-style").click(function (){
-      $(".btn-hair-style-second").show();
-      $(".btn-status, .btn-activity, .btn-hair-color, .btn-facial-hair").hide();
-      $(".btn-bald").on("click", function (){
-        if (maingame.checkIfFeature("hairStyle", "bald")){
-          $(".short, .medium, .btn-hair-color, .btn-medium-style, .btn-short, .btn-bald").hide();
-          $(".btn-status, .btn-activity, .btn-hair-color, .btn-facial-hair").show();
-        } else alert("try again");
-      })
-      $(".btn-short").on("click", function (){
-        if (maingame.checkIfFeature("hairStyle", "short")){
-          $(".bald, .medium, .btn-medium-style, .btn-short, .btn-bald").hide();
-          $(".btn-status, .btn-activity, .btn-hair-color, .btn-facial-hair").show();
-        } else alert("try again");
-      })
-      $(".btn-medium-style").on("click", function (){
-        if(maingame.checkIfFeature("hairStyle", "medium")){
-          $(".bald, .short, .btn-medium-style, .btn-short, .btn-bald").hide();
-          $(".btn-status, .btn-activity, .btn-hair-color, .btn-facial-hair").show();
-        } else alert("try again");
-      })
-      
-    })
-
-    $(".btn-hair-color").click(function (){
-      $(".btn-hair-color-second").show();
-      $(".btn-status, .btn-activity, .btn-hair-style, .btn-facial-hair").hide();
-      $(".btn-brown").on("click", function (){
-        if(maingame.checkIfFeature("hairColor", "brown")){
-          $(".blond, .red, .gray, .bald, .btn-gray, .btn-red, .btn-blond, .btn-brown").hide();
-          $(".btn-status, .btn-activity, .btn-hair-style, .btn-facial-hair").show();
-        } else alert("try again");
-      })
-      $(".btn-blond").on("click", function (){
-        if(maingame.checkIfFeature("hairColor", "blond")){
-          $(".brown, .red, .gray, .bald, .btn-gray, .btn-red, .btn-blond, .btn-brown").hide();
-          $(".btn-status, .btn-activity, .btn-hair-style, .btn-facial-hair").show();
-        } else alert("try again");
-      })
-      $(".btn-red").on("click", function (){
-        if(maingame.checkIfFeature("hairColor", "red")) {
-          $(".brown, .blond, .gray, .bald, .btn-gray, .btn-red, .btn-blond, .btn-brown").hide();
-          $(".btn-status, .btn-activity, .btn-hair-style, .btn-facial-hair").show();
-        } else alert("try again");
-      })
-      $(".btn-gray").on("click", function (){
-        if(maingame.checkIfFeature("hairColor", "gray")){
-          $(".brown, .blond, .red, .bald, .btn-gray, .btn-red, .btn-blond, .btn-brown").hide();
-          $(".btn-status, .btn-activity, .btn-hair-style, .btn-facial-hair").show();
-        } else alert("try again");
-      })
-    })
-
-    $(".btn-facial-hair").click(function (){
-      $(".btn-facial-hair-second").show();
-      $(".btn-yes").on("click", function (){
-        if(maingame.checkIfFeature("facialHair", "yes")){
-        $(".no-facial, .btn-yes, .btn-no").remove();
-      } else alert("try again");
-      })
-      $(".btn-no").on("click", function (){
-        $(".yes-facial, .btn-yes, .btn-no").remove();
-      })
-    })
-
-    $(".2nd").click(function (){
-      maingame.hints++
-      console.log(maingame.hints);
-      $("#hints1").text(maingame.hints);
+    maingame.options[type].forEach(function (option, index) {
+      $("ul.second").append('<li><button class="btn" data-attr="' + type + '" data-value="' + option.value + '" data-hide="' + option.hideClass + '">' + option.name +'</button></li>')
     });
+  });
 
-    $(".imagen").live('click', function() {
-      maingame.pickedCard = $(this);
-      if (maingame.checkIfPair()) {
-        $("#guessed1").text(maingame.guessed);
-        maingame.draw();
-        maingame.checkIfWin();
-      }
+  $('ul.second').on('click', 'button', function() {
+    $(".randomcard").html('');
+    $('#status_message').html('');
+
+    var value = $(this).data('value');
+    var attr = $(this).data('attr');
+    var hide = $(this).data('hide');
+
+    if (maingame.checkIfFeature(attr, value)) {
+      $(hide).hide();
+      $('#status_message').html(maingame.currentPlayer + ': correct answer!');
+    } else {
+      $('#status_message').html(maingame.currentPlayer + ': ' + value + ' is wrong!');
+    }
+
+    maingame.players[maingame.currentPlayer].hints++;
+    $("#" + maingame.currentPlayer + " .hints").text(maingame.players[maingame.currentPlayer].hints);
+
+
   });
+
+  $(".imagen").live('click', function() {
+    var picked = $(this)[0].offsetParent.attributes[1].nodeValue
+    if (maingame.checkIfPair(picked)) {
+      $(".randomcard").html($(this)[0]);
+      maingame.players[maingame.currentPlayer].guessed++;
+      $("#" + maingame.currentPlayer + " .guessed").text(maingame.players[maingame.currentPlayer].guessed);
+      if (maingame.checkIfWin()) {
+        maingame.restart();
+      } else {
+        maingame.changePlayer();
+        $("#current_player").text(maingame.currentPlayer);
+      };
+      maingame.draw();
+    }
   });
+});
