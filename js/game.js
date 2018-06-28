@@ -43,7 +43,8 @@ var mainGame = function() {
     }
   };
   this.audiosilbido = new Audio('./sound/silbato.mp3');
-  this.audiogol = new Audio('./sound/21-24.mp3');
+  this.audiogol = new Audio('./sound/gol.mp3');
+  this.audiocampeones = new Audio('./sound/campeones.mp3');
 };
 
 mainGame.prototype.shuffleCard = function() {
@@ -52,6 +53,7 @@ mainGame.prototype.shuffleCard = function() {
 
 mainGame.prototype.randomPick = function(items) {
   this.randomCard = items[Math.floor(Math.random() * items.length)];
+  console.log(this.randomCard);
   return true;
 };
 
@@ -83,8 +85,8 @@ mainGame.prototype.checkIfWin = function() {
   var playerOneWrongs = this.players.player1.wrongs;
   var playerTwoWrongs = this.players.player2.wrongs;
 
-  var scorePlayerOne = playerOneHints + playerOneWrongs
-  var scorePlayerTwo = playerTwoHints + playerTwoWrongs
+  var scorePlayerOne = playerOneHints + playerOneWrongs * 1.5
+  var scorePlayerTwo = playerTwoHints + playerTwoWrongs * 1.5
 
   if (this.players.player1.guessed == 2 && this.players.player2.guessed == 2) {
     if (scorePlayerOne < scorePlayerTwo) {
@@ -95,7 +97,7 @@ mainGame.prototype.checkIfWin = function() {
       alert("You're equally good! Congrats!!!");
     }
   } 
-
+  this.audiocampeones.play();
 };
 
 mainGame.prototype.draw = function() {
