@@ -14,10 +14,10 @@ var mainGame = function() {
       { name: "Medium", value: "medium", hideClass: ".bald, .short" }
     ],
     hairColor: [
-      { name: "Brown", value: "brown", hideClass: ".blond, .red, .gray" },
-      { name: "Blond", value: "blond", hideClass: ".brown, .red, .gray" },
-      { name: "Red", value: "red", hideClass: ".brown, .blond, .gray" },
-      { name: "Gray", value: "gray", hideClass: ".brown, .blond, .red" }
+      { name: "Brown", value: "brown", hideClass: ".blond, .red, .gray, .bald" },
+      { name: "Blond", value: "blond", hideClass: ".brown, .red, .gray, .bald" },
+      { name: "Red", value: "red", hideClass: ".brown, .blond, .gray, .bald" },
+      { name: "Gray", value: "gray", hideClass: ".brown, .blond, .red, .bald" }
     ],
     facialHair: [
       { name: "Yes", value: "yes", hideClass: ".no" },
