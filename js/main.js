@@ -10,7 +10,6 @@ $(document).ready(function() {
     $(".first").show();
   })
 
-
   $("ul.first button").on('click', function () {
     $(".randomcard").html('');
     var type = $(this).data('type');
@@ -38,8 +37,6 @@ $(document).ready(function() {
 
     maingame.players[maingame.currentPlayer].hints++;
     $("#" + maingame.currentPlayer + " .hints").text(maingame.players[maingame.currentPlayer].hints);
-
-
   });
 
   $(".imagen").live('click', function() {

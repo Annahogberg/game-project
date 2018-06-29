@@ -12,7 +12,7 @@ var cards = [
     name: "Buffon",
     img: "Buffon.png",
     status: "player",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "medium",
     hairColor: "brown",
     facialHair: "no"
@@ -30,7 +30,7 @@ var cards = [
     name: "Courtois",
     img: "Courtois.png",
     status: "player",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "medium",
     hairColor: "brown",
     facialHair: "no"
@@ -39,7 +39,7 @@ var cards = [
     name: "Cristiano",
     img: "CristianoRonaldo.png",
     status: "player",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "short",
     hairColor: "brown",
     facialHair: "no"
@@ -48,7 +48,7 @@ var cards = [
     name: "De Gea",
     img: "DavidDeGea.png",
     status: "player",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "medium",
     hairColor: "blond",
     facialHair: "yes"
@@ -57,7 +57,7 @@ var cards = [
     name: "Valverde",
     img: "ErnestoValverde.png",
     status: "coach",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "short",
     hairColor: "brown",
     facialHair: "no"
@@ -66,7 +66,7 @@ var cards = [
     name: "Griezmann",
     img: "Griezmann.png",
     status: "player",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "medium",
     hairColor: "blond",
     facialHair: "no"
@@ -83,7 +83,7 @@ var cards = [
     name: "Iniesta",
     img: "Iniesta.png",
     status: "player",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "short",
     hairColor: "brown",
     facialHair: "yes"
@@ -92,7 +92,7 @@ var cards = [
     name: "Mourinho",
     img: "JoseMourinho.png",
     status: "coach",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "short",
     hairColor: "gray",
     facialHair: "no"
@@ -101,7 +101,7 @@ var cards = [
     name: "De Bruyne",
     img: "KevinDeBruyne.png",
     status: "player",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "medium",
     hairColor: "red",
     facialHair: "no"
@@ -128,7 +128,7 @@ var cards = [
     name: "Wayne Rooney",
     img: "WayneRooney.png",
     status: "player",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "short",
     hairColor: "red",
     facialHair: "no"
@@ -137,7 +137,7 @@ var cards = [
     name: "Messi",
     img: "Messi.png",
     status: "player",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "medium",
     hairColor: "red",
     facialHair: "yes"
@@ -146,7 +146,7 @@ var cards = [
     name: "Salah",
     img: "MohamedSalah.png",
     status: "player",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "medium",
     hairColor: "brown",
     facialHair: "yes"
@@ -155,7 +155,7 @@ var cards = [
     name: "N Golo Kanté",
     img: "NGoloKante.png",
     status: "player",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "bald",
     facialHair: "no"
   },
@@ -163,7 +163,7 @@ var cards = [
     name: "Torres",
     img: "Torres.png",
     status: "player",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "medium",
     hairColor: "red",
     facialHair: "no"
@@ -172,7 +172,7 @@ var cards = [
     name: "Guardiola",
     img: "PepGuardiola.png",
     status: "coach",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "bald",
     facialHair: "yes"
   },
@@ -180,7 +180,7 @@ var cards = [
     name: "Simeone",
     img: "Simeone.png",
     status: "coach",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "medium",
     hairColor: "brown",
     facialHair: "yes"
@@ -189,7 +189,7 @@ var cards = [
     name: "Zlatan",
     img: "Zlatan.png",
     status: "player",
-    actividad: "active",
+    actividad: "activo",
     hairStyle: "short",
     hairColor: "brown",
     facialHair: "yes"

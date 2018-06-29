@@ -5,8 +5,8 @@ var mainGame = function() {
       { name: "Player", value: "player", hideClass: ".coach" }
     ],
     actividad: [
-      { name: "Active", value: "Active", hideClass: ".retired" },
-      { name: "Retired", value: "retired", hideClass: ".Active" }
+      { name: "Active", value: "activo", hideClass: ".retired" },
+      { name: "Retired", value: "retired", hideClass: ".activo" }
     ],
     hairStyle: [
       { name: "Bald", value: "bald", hideClass: ".medium, .short" },
