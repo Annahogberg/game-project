@@ -1,3 +1,5 @@
+//main game
+
 var mainGame = function() {
   this.options = {
     status: [

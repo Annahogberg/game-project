@@ -1,3 +1,5 @@
+// when ready and creation of buttons
+
 $(document).ready(function() {
   maingame = new mainGame(cards);
   maingame.shuffleCard(cards);
