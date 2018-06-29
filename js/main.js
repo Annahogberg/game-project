@@ -18,7 +18,8 @@ $(document).ready(function() {
     $("ul.second").html('');
 
     maingame.options[type].forEach(function (option, index) {
-      $("ul.second").append('<li><button class="btn" data-attr="' + type + '" data-value="' + option.value + '" data-hide="' + option.hideClass + '">' + option.name +'</button></li>')
+      $("ul.second").append('<li><button class="btn" data-attr="' + type + '" data-value="' 
+      + option.value + '" data-hide="' + option.hideClass + '">' + option.name +'</button></li>')
     });
   });
 

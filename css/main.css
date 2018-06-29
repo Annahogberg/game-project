@@ -41,6 +41,11 @@ p {
   margin-top: -80px;
 }
 
+.second button{
+  color: white;
+  background: darkblue;
+}
+
 .texto {
   margin-top: -100px;
   color: white;
